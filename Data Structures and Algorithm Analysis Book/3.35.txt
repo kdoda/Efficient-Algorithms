@@ -1,0 +1,12 @@
+Ne rastin be shtimi dhe delete behet me kompliksitet constant.
+Duke mbajtur nje iterator te tail,sepse nqs e mbajme te header skemi si aksesojme el e fundit pas shkuar ne fund O(n).
+Shembull shtimi (shtohet ne fund iqet ne fillim  ):
+node* p= new node();
+p->next=tail->next; //pointon ne fillim sepse tail next eshte pointer te el i pare 
+tail->next=p;
+tail=p;
+
+Shembull delete(hiqet el i pare gjithmon):
+node* p= tail-next; //p el i pare
+tail->next=p->next;
+delete p;
